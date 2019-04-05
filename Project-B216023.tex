@@ -1,3 +1,9 @@
+% Title: DSP Project 2019 - Huffman Encoding & Decoding using MATLAB
+% Author: Ravi Teja Gannavarapu
+% Student ID: B216023
+% Email: b216023@iiit-bh.ac.in
+% Date: 28/03/2019
+
 \documentclass[a4paper, 12pt]{article}
 
 \usepackage{geometry}
@@ -36,7 +42,7 @@ Class: 2016 - 2020
 \vskip4em
 \large International Institute of Information Technology, Bhubaneswar
 \newline
-Gothapatna, PO: Mailpada, Bhubaneswar.
+Gothapatna, PO: Malipada, Bhubaneswar.
 \end{center}
 
 \pagebreak
@@ -44,9 +50,6 @@ Gothapatna, PO: Mailpada, Bhubaneswar.
 
 \newgeometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
 \pagenumbering{arabic}
-\begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
 \begin{center}
 \Large Abstract\\\rule{19cm}{0.01cm}\\\vskip2em
 \end{center}
@@ -57,9 +60,6 @@ information before transmission is necessary to ensure data security and efficie
 \pagebreak
 % Page 3 - Introduction
 
-\begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
 \begin{center}
 \Large Introduction\\\rule{19cm}{0.01cm}\\\vskip2em
 \end{center}
@@ -82,9 +82,6 @@ Huffman coding is an entropy encoding algorithm used for lossless data compressi
 % Page 4 - Huffman Tree
 
 \begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
-\begin{center}
 \Large Huffman Tree\\\rule{19cm}{0.01cm}\\\vskip2em
 \end{center}
 
@@ -97,7 +94,7 @@ The simplest tree construction algorithm uses a priority queue or table where th
 \newline
 
 \begin{center}
-\includegraphics[width=250px]{huffmantree.jpg}
+\includegraphics[width=300px]{huffmantree.jpg}
 \end{center}
 \begin{center}
 \large Figure 1: Huffman Tree.
@@ -107,10 +104,7 @@ The simplest tree construction algorithm uses a priority queue or table where th
 % Page 5 - Steps to encode
 
 \begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
-\begin{center}
-\Large Steps to encode\\\rule{19cm}{0.01cm}\\\vskip2em
+\Large Algorithm/Steps to encode\\\rule{19cm}{0.01cm}\\\vskip2em
 \end{center}
 
 \begin{enumerate}
@@ -131,9 +125,6 @@ From the above, it is now clear that the encoding method should give rise to a u
 \pagebreak
 % Page 6 - How the MATLAB code works
 
-\begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
 \begin{center}
 \Large How the MATLAB code works?\\\rule{19cm}{0.01cm}\\\vskip2em
 \end{center}
@@ -160,9 +151,6 @@ where N\textsubscript{i} is the length of \textit{ith} codeword and P\textsubscr
 % Page 7 - MATLAB functions
 
 \begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
-\begin{center}
 \Large MATLAB functions explained\\\rule{19cm}{0.01cm}\\\vskip2em
 \end{center}
 
@@ -171,7 +159,7 @@ where N\textsubscript{i} is the length of \textit{ith} codeword and P\textsubscr
 \texttt{comp = huffmanenco(sig, dict)}
 \end{center}
 
-This line encodes the signal 'sig' described by the 'dict' dictionary. The argument 'sig' can have the form of a numeric vector, numeric cell array or alphanumeric cell array. If 'sig' is a cell array, it must be either a row or a column. The 'dict' is an Nx2 cell array, where 'N' is the number of distinct possible symbols to be encoded. The first column of 'dict' represents the distinct symbols and the second column represents the corresponding codewords. Each codeword is represented as a numeric row vector, and no codeword in 'dict' can be the prefix of any other codeword in 'dict'. You can generate 'dict' using the huffmandict function.
+This line encodes the signal 'sig' described by the 'dict' dictionary. The argument 'sig' can have the form of a numeric vector, numeric cell array or alphanumeric cell array. If 'sig' is a cell array, it must be either a row or a column. The 'dict' is an N*2 cell array, where 'N' is the number of distinct possible symbols to be encoded. The first column of 'dict' represents the distinct symbols and the second column represents the corresponding codewords. Each codeword is represented as a numeric row vector, and no codeword in 'dict' can be the prefix of any other codeword in 'dict'. You can generate 'dict' using the huffmandict function.
 \newline
 \newline
 
@@ -180,16 +168,13 @@ This line encodes the signal 'sig' described by the 'dict' dictionary. The argum
 \texttt{dsig = huffmandeco(comp, dict)}
 \end{center}
 
-This line decodes the numeric Huffman code vector comp using the code dictionary 'dict'. The argument 'dict' is an Nx2 cell array, where 'N' is the number of distinct possible symbols in the original signal that was encoded as 'comp'. The first column of 'dict' represents the distinct symbols and the second column represents the corresponding codewords. Each codeword is represented as a numeric row vector, and no codeword in 'dict' is allowed to be the prefix of any other codeword in 'dict'. You can generate 'dict' using the Huffmandict function and 'comp' using the huffmanenco function. If all signal values in 'dict' are numeric, 'dsig' is a vector; if any signal value in 'dict' is alphabetical, 'dsig' is a one-dimensional cell array.
+This line decodes the numeric Huffman code vector comp using the code dictionary 'dict'. The argument 'dict' is an N*2 cell array, where 'N' is the number of distinct possible symbols in the original signal that was encoded as 'comp'. The first column of 'dict' represents the distinct symbols and the second column represents the corresponding codewords. Each codeword is represented as a numeric row vector, and no codeword in 'dict' is allowed to be the prefix of any other codeword in 'dict'. You can generate 'dict' using the Huffmandict function and 'comp' using the huffmanenco function. If all signal values in 'dict' are numeric, 'dsig' is a vector; if any signal value in 'dict' is alphabetical, 'dsig' is a one-dimensional cell array.
 
 \pagebreak
-% Page 8 - MATLAB Code
+% Page 8 - MATLAB code
 
 \begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
-\begin{center}
-\Large MATLAB Code\\\rule{19cm}{0.01cm}\\\vskip1em
+\Large MATLAB code\\\rule{19cm}{0.01cm}\\\vskip1em
 \end{center}
 
 \small \begin{lstlisting}[language=Matlab]
@@ -243,9 +228,6 @@ fprintf('The variance is: %d\n', v);
 % Page 9 -  Output, conclusion & future scope
 
 \begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
-\begin{center}
 \Large Output, Conclusion \& Future Scope\\\rule{19cm}{0.01cm}\\\vskip2em
 \end{center}
 
@@ -266,9 +248,6 @@ fprintf('The variance is: %d\n', v);
 \pagebreak
 % Page 10 -  References
 
-\begin{center}
-\LARGE Huffman Encoding \& Decoding using MATLAB\\\rule{19cm}{0.01cm}
-\end{center}
 \begin{center}
 \Large References\\\rule{19cm}{0.01cm}\\\vskip2em
 \end{center}
